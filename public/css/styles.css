@@ -1,104 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100&family=Cormorant+SC:wght@500&family=Quicksand&family=Roboto+Slab:wght@300&family=Roboto:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100&family=Cormorant+SC:wght@500&family=Quicksand&family=Roboto+Slab:wght@300&family=Roboto:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100&family=Cormorant+SC:wght@500&family=Merriweather:ital,wght@1,300&family=Quicksand&family=Roboto+Slab:wght@300&family=Roboto:wght@500&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100&family=Cormorant+SC:wght@500&family=Quicksand&family=Roboto+Slab:wght@300&family=Roboto:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100&family=Cormorant+SC:wght@500&family=Quicksand&family=Roboto+Slab:wght@300&family=Roboto:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100&family=Cormorant+SC:wght@500&family=Merriweather:ital,wght@1,300&family=Quicksand&family=Roboto+Slab:wght@300&family=Roboto:wght@500&display=swap');
-
-body{
-  margin:0 auto;
+body {
+  margin: 30px auto;
   max-width: 60%;
-  /* background-image: url("/images/site/checkerboard.jpg"); */
+  background-image: url("/images/site/checkerboard.jpg");
+
+}
+
+#wrapper{
+  background-color: white;
+  border:solid 5px rgb(44, 189, 237)  ;
+  border-radius: 10px 10px 10px 10px;
+  padding: 20px;
 }
 
 /* HEADER */
-#top-header{
+#top-header {
   display: flex;
   justify-content: space-between;
   font-family: "Roboto";
-  
 }
 
-.siteName a{
+.siteName a {
   font-weight: bold;
   text-decoration: none;
   color: black;
-  font-weight: bolder ;
-  font-size:x-large;
+  font-weight: bolder;
+  font-size: x-large;
 }
 
-#tools a{
+#tools a {
   text-decoration: none;
   font-size: medium;
   text-decoration: none;
   color: darkgray;
-
 }
 
 /* NAVIGATION */
-nav ul{
+nav ul {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   background-color: black;
   list-style-type: none;
   font-family: "Roboto slab";
-
-
 }
 
-nav ul li{
-  padding: .7em;
+nav ul li {
+  padding: 0.7em;
   text-decoration: none;
   color: aliceblue;
-
 }
 
 /* MAIN */
 /* first section(Delorean) */
-h1{
-  padding:1em;
+h1 {
+  padding: 1em;
+  font-family: "Merriweather";
 }
 
-main{
+main {
   background-color: white;
 }
-#herodiv{
+#herodiv {
   display: flex;
   flex-direction: row;
-  
-  
 }
-#heromessage{
+#heromessage {
   text-align: center;
   padding: 5px;
   font-family: "Merriweather";
-  color:rgba(39, 227, 231);
+  color: rgba(39, 227, 231);
   background-color: rgba(143, 140, 140, 0.1);
 }
 
 /* second section */
-#delorean-section{
+#delorean-section {
   margin: 60px auto;
   display: grid;
   font-family: "Merriweather";
   grid-template-columns: 1fr 1fr;
   column-gap: 100px;
-
 }
-#upgrades{
+#upgrades {
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 30px;
   column-gap: 5px;
-
 }
-.upgradeimgs{
+.upgradeimgs {
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color:rgba(39, 227, 231) ;
+  background-color: rgba(39, 227, 231);
 }
 
-.upgradeimgs img{
+.upgradeimgs img {
   align-self: center;
   max-width: 90%;
 }
@@ -109,16 +108,13 @@ main{
     margin: 0 auto;
     max-width: 100%;
     padding: 50px;
-
   }
 
-  #heroimage img{
+  #heroimage img {
     width: 90%;
   }
 
-  #delorean-section{
+  #delorean-section {
     grid-template-columns: 1fr;
   }
 }
-
-
