@@ -2,13 +2,17 @@
   "sqltools.connections": [
     {
       "pgOptions": {
-        "ssl": true
+        "ssl": {
+          "rejectUnauthorized": true
+        }
       },
       "previewLimit": 50,
       "server": "localhost",
       "driver": "PostgreSQL",
       "name": "cse340db",
-      "connectString": "postgres://cse340db:RMluWTKADKukmAYCGpjYMfIitzRr61In@dpg-chbjcse7avjcvo6cvrgg-a.oregon-postgres.render.com/cse340db_3296"
+      "database": "cse340db_37xi",
+      "username": "cse340db",
+      "connectString": "postgres://cse340db:A2Hq7vYJPLRSVyn6qZJbk2DOc04ffiNZ@dpg-chgk3v67avjbbjr3lni0-a.oregon-postgres.render.com/cse340db_37xi"
     }
   ]
 }
