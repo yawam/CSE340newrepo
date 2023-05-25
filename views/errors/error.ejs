@@ -1,0 +1,10 @@
+<% if (title) { %>
+    <nav>
+        <% nav %>
+    </nav>
+    <h1><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+
+    <%- message%>
