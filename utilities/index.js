@@ -79,6 +79,19 @@ Util.buildInvView = async function(data){
  return div
 }
 
+/*******
+ * Build classification dropdown
+ * ****** */
+Util.buildDropdown = async function(req, res, next){
+  let data = await invModel.getClassifications()
+  let dropdown = "<select name='Classification_id' id='' required>"
+  data.rows.forEach((row) => {
+    dropdown += "<option value=" + row.classification_id + '>' + row.classification_name + "</option>"
+  })
+  dropdown += "</select>"
+  return dropdown
+}
+
 
 /* ****************************************
  * Middleware For Handling Errors

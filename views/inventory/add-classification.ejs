@@ -1,0 +1,16 @@
+<% if  (title) {%>
+    <h1 class="all-forms"><%= title  %></h1>
+    <% } else{
+        res.redirect("/")
+    } %>
+
+    <% messages() %>
+
+
+
+<form class="all-forms"id="classification-form" action="/inventory/add-classification" method="post">
+    <p>Name must be Alphabetic Characters Only</p><br>
+    <label for="classification_name">Classification Name</label><br>
+        <input type="text" name="classification_name" pattern="^(?!.*\s)([A-Za-z0-9]{1,})$" value="<% locals.classification_name%>" required> <br>
+        <input id="classification-submit" type="submit" value="Create Classification">
+</form>
