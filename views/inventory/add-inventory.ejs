@@ -4,10 +4,10 @@
     res.redirect("/")
  } %>
 
- <% messages() %>
+<p> <%- messages() %> </p>
 
 
-<form class="all-forms" id="add-inventory-form" action="/inv/add-inventory" method="post">
+<form class="all-forms" class="add-inventory-form" action="/inv/add-inventory" method="post">
     <label class="labels" for="inv_make">Make: </label>
     <input class="inputs" type="text" name="inv_make" value="<%= locals.inv_make %>" required ><br>
     
@@ -35,7 +35,7 @@
     <label class="labels" for="inv_color">Color:</label> 
     <input class="inputs" type="text" name="inv_color" value="<%= locals.inv_color %>" required ><br>
     
-    <label class="labels" for="Classification_id">Classification: </label>
+    <label class="labels" for="classification_id">Classification: </label>
     <%- dropdown %><br>
     
     <input class="submits" type="submit" value="Add Vehicle" id="submit-button">

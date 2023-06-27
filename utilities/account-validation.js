@@ -71,3 +71,50 @@ validate.loginRules = () => {
         .withMessage("Password does not meet requirements")
     ]
 }
+
+validate.checkRegData = async (req, res, next) => {
+    const { account_firstname, account_lastname, account_email } = req.body
+    let errors = []
+    errors = validationResult(req)
+    if (!errors.isEmpty()) {
+        let nav = await utilities.getNav()
+        res.render("account/register", {
+        errors,
+        title: "Registration",
+        nav,
+        account_firstname,
+        account_lastname,
+        account_email,
+        })
+        return
+    }
+    next()
+    }
+
+validate.checkLoginData = async (req, res, next) => {
+const {account_email} = req.body
+let errors = []
+errors = validationResult(req)
+if (!errors.isEmpty()) {
+    let nav = await utilities.getNav()
+    res.render("../views/account/login", {
+    errors: null,
+    title: "Login",
+    nav,
+    account_email
+    })
+    return
+}
+next()
+}
+
+validate.checkAccountType = (req, res, next) => {
+    if(res.locals.accountData.account_type == 'Admin' || res.locals.accountData.account_type == 'Employee'){
+        next()
+    } else{
+        req.flash("notice", "Access Denied. Only authorized users can access that page")
+        return res.redirect("/account")
+    }
+}
+
+module.exports = validate

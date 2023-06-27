@@ -172,11 +172,11 @@ input {
 
 /*****inventory form*****/
 
-#add-inventory-form label {
+.add-inventory-form label {
   margin-left: 0px;
 }
 
-#add-inventory-form input {
+.add-inventory-form input {
   margin-left: 0px;
 }
 

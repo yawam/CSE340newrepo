@@ -14,6 +14,7 @@ const utilities = require("./utilities/");
 const session = require("express-session");
 const pool = require("./database/");
 const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser")
 
 
 
@@ -40,6 +41,11 @@ app.use(function (req, res, next) {
   next();
 });
 
+// Cookie Parser Middleware
+app.use(cookieParser())
+
+//Middleware for checking JWT token
+app.use(utilities.checkJWTToken)
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-ww-form-urlencoded
@@ -59,8 +65,12 @@ app.use(require("./routes/static"));
 app.get("/", utilities.handleErrors(baseController.buildHome));
 // Inventory routes
 app.use("/inv", require("./routes/inventoryRoute"));
+
+// app.use("/admin/", require("./routes/admin route"));
 // Account route
 app.use("/account", require("./routes/accountRoute"));
+
+
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {
   next({ status: 404, message: "Sorry, we appear to have lost that page." });

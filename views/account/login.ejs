@@ -1,6 +1,6 @@
 <% if (title) { %>
 <h1 class="all-forms"><%= title %></h1>
-<% } else { res.redirect('/') } %> <%- messages() %>
+<% } else { res.redirect('/') } %> <p><%- messages() %></p>
 
 <form id="login-form" class="all-forms" action="/account/login" method="post">
   <label class="labels" for="account_email"> Email:<br /> </label>

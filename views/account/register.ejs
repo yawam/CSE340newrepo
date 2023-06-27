@@ -2,7 +2,7 @@
     <h1 class="all-forms"><%= title %></h1>
     <% } else { res.redirect('/') } %> 
     
-    <%- messages() %>
+    <p> <%- messages() %> </p>
     
     <form id="register-form" class="all-forms" action="/account/register" method="post">
       <label class="labels"  for="account_firstname">Firstname*<br></label>
