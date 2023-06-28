@@ -1,0 +1,38 @@
+<% if (title) { %>
+    <h1 class="all-forms"><%= title %></h1>
+    <% } else { res.redirect('/') } %> 
+    
+    <p> <%- messages() %> </p>
+
+    <form class="all-forms register-form" action="/account/register" method="post">
+        <h2>Account Password</h2>
+        <label class="labels"  for="account_firstname">Firstname*<br></label>
+        <input class="inputs" id="account_firstname"  type="text" name="account_firstname" required value="<%= locals.accountData.account_firstname %>"><br>
+  
+        <label class="labels" for="account_lastname">Lastname*<br></label>
+        <input class="inputs" id="account_lastname"  type="text" name="account_lastname" required value=" <%= locals.accountData.account_lastname %>"><br>
+  
+        <label class="labels" for="account_email">Email Address*<br></label>
+        <input class="inputs" id="account_email"  type="email" name="account_email" required value=" <%= locals.accountData.account_email %>"><br>
+
+        <input class="submits" type="submit" value="Update">
+    
+        <input type="hidden" name="account_id"
+        <% if(account_id) { %> value="<%= account_id %>"
+        <% } %>>
+      </form>
+
+    <form class="all-forms register-form" action="/account/register" method="post">
+        <h2>Change Password</h2>
+        <label class="labels" for="account_password">Password*<br></label>
+        <input class="inputs" type="password" name="account_password" id="accountPassword" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?=.*\s).{12,}$" required title="All fields are required. The password must be at least 12 characters in length, minimum, contain at least 1 capital letter, at least 1 number,
+        and at least 1 special character"><br>
+  
+        <input class="submits" type="submit" value="Register">
+
+        <input type="hidden" name="account_id"
+        <% if(account_id) { %> value="<%= account_id %>"
+        <% } %>>
+  
+    </form>
+  

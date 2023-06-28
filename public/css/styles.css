@@ -37,7 +37,7 @@ body {
   text-decoration: none;
   font-size: medium;
   text-decoration: none;
-  color: darkgray;
+  color: rgb(57, 56, 56);
 }
 
 #tools a:hover {
@@ -143,7 +143,8 @@ input {
 }
 
 /***Register Form****/
-#register-form {
+.register-form {
+  margin-bottom: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding: 20px;
   border-radius: 3%;

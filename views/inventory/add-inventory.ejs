@@ -7,33 +7,33 @@
 <p> <%- messages() %> </p>
 
 
-<form class="all-forms" class="add-inventory-form" action="/inv/add-inventory" method="post">
+<form class="add-inventory-form all-forms" action="/inv/add-inventory" method="post">
     <label class="labels" for="inv_make">Make: </label>
-    <input class="inputs" type="text" name="inv_make" value="<%= locals.inv_make %>" required ><br>
+    <input class="inputs" type="text" id="inv_make" name="inv_make" value="<%= locals.inv_make %>" required ><br>
     
     <label class="labels" for="inv_model">Model: </label>
-    <input class="inputs" type="text" name="inv_model" value="<%= locals.inv_model %>" required ><br>
+    <input class="inputs" id="inv_model" type="text" name="inv_model" value="<%= locals.inv_model %>" required ><br>
     
     <label class="labels" for="inv_year">Year: </label>
-    <input class="inputs" type="number" min="1900" max="2099" name="inv_year" value="<%= locals.inv_year %>" required ><br>
+    <input class="inputs" id="inv_year" type="number" min="1900" max="2099" name="inv_year" value="<%= locals.inv_year %>" required ><br>
     
     <label class="labels" for="inv_description">Description: </label>
-    <textarea type="text" name="inv_description" value="<%= locals.inv_description %>" required ></textarea><br>
+    <textarea type="text" id="inv_description" name="inv_description" value="<%= locals.inv_description %>" required ></textarea><br>
     
     <label class="labels" for="inv_image">Image:</label>
-    <input class="inputs" type="text" name="inv_image" value="<%= locals.inv_image %>" required ><br>
+    <input class="inputs" id="inv_image" type="text" name="inv_image" value="<%= locals.inv_image %>" required ><br>
         
     <label class="labels" for="inv_thumbnail">Thumbnail: </label>
-    <input class="inputs" type="text" name="inv_thumbnail" value="<%= locals.inv_thumbnail %>" required ><br>
+    <input class="inputs" id="inv_thumbnail"  type="text" name="inv_thumbnail" value="<%= locals.inv_thumbnail %>" required ><br>
     
     <label class="labels" for="inv_price">Price: </label>
-    <input class="inputs" type="number" name="inv_price" value="<%= locals.inv_price %>" required ><br>
+    <input class="inputs" id="inv_price" type="number" name="inv_price" value="<%= locals.inv_price %>" required ><br>
     
     <label class="labels" for="inv_miles">Miles: </label>
-    <input class="inputs" type="number" name="inv_miles" value="<%= locals.inv_miles %>" required ><br>
+    <input class="inputs" id="inv_miles" type="number" name="inv_miles" value="<%= locals.inv_miles %>" required ><br>
     
     <label class="labels" for="inv_color">Color:</label> 
-    <input class="inputs" type="text" name="inv_color" value="<%= locals.inv_color %>" required ><br>
+    <input class="inputs" id="inv_color"  type="text" name="inv_color" value="<%= locals.inv_color %>" required ><br>
     
     <label class="labels" for="classification_id">Classification: </label>
     <%- dropdown %><br>
