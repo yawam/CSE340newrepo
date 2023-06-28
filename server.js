@@ -56,6 +56,10 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 app.set("view engine", "ejs");
 app.use(expressLayouts);
 app.set("layout", "./layouts/layout"); // not at view root
+app.get('/clear-cookie', (req, res) => {
+  res.clearCookie('jwt')
+  res.redirect('/')
+}) // destroy jwt to logout and return to root.
 
 /* ***********************
  * Routes
