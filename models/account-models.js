@@ -1,5 +1,16 @@
 const pool = require("../database/index")
 
+
+/****
+ * Get Accounts from DB
+ * ***** */
+async function getAccounts(){
+    return await pool.query(
+      "SELECT * FROM public.account WHERE account_id >= 5 ORDER BY account_firstname"
+    )
+    }
+
+
 /*****
  * Register new account
  */
@@ -92,4 +103,4 @@ async function updatePassword(
     }
   }
 
-module.exports = { registerAccount, checkExistingEmail, getAccountByEmail, updateAccount, getAccountById, updatePassword }
+module.exports = {getAccounts, registerAccount, checkExistingEmail, getAccountByEmail, updateAccount, getAccountById, updatePassword }

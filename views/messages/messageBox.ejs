@@ -1,0 +1,26 @@
+<% if (title) { %>
+<h1 class="all-forms"><%= title %></h1>
+<% } else { res.redirect("/") } %>
+
+<p><%- messages() %></p>
+
+<form class="add-inventory-form all-forms message-inbox" action="/message/send" method="post">
+  <h2>Send New Message</h2>
+  <label for="message_to">To:<%- dropdown %> </label><br />
+
+  <label for="message_subject">Subject: </label>
+  <input type="text" name="message_subject" id="message_subject" /><br />
+
+  <label for="message_body">Body: </label>
+  <textarea name="message_body" id="message_body" cols="30" rows="10"></textarea
+  ><br />
+
+  <input type="submit" value="Send Message" />
+  <input type="hidden" name="message_from"
+
+    <% if(locals.accountData.account_id) { %>
+
+      value="<%= locals.accountData.account_id %>"
+
+    <% } %>>
+</form>

@@ -1,0 +1,14 @@
+<% if (title) { %>
+    <h1 class="all-forms"><%= title %></h1>
+ <% } else {
+    res.redirect("/")
+ } %>
+
+<p> <%- messages() %> </p>
+
+<p><a href="/message/compose">Write a New Message</a></p>
+<p><a href="">Archived Messages</a></p>
+
+<!-- Table to be sent to function for dynamic rendering and loop to fill rows -->
+ 
+<table id="messageList"><%- messageList %></table>

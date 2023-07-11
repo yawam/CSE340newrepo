@@ -1,4 +1,6 @@
 const invModel = require("../models/inventory-model");
+const accModel = require("../models/account-models");
+
 const Util = {};
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
@@ -144,6 +146,49 @@ Util.buildDropdown = async function (classification_id = null) {
   dropdown += "</select>";
   return dropdown;
 };
+
+/*****
+ * Build Accounts Dropdown
+ * **** */
+Util.buildAccountDropdown = async function (account_id = null){
+  let data = await accModel.getAccounts();
+  let dropdown = "<select id='message_to' name='message_to' id='accountList' >";
+  dropdown += "<option value='' > -- Select --</option>";
+  data.rows.forEach((row) => {
+    dropdown += "<option value=" + row.account_id;
+    if (account_id == row.account_id) {
+      dropdown += " selected ";
+    }
+    dropdown += ">" + row.account_firstname + " " + row.account_lastname + "</option>";
+  });
+  dropdown += "</select>";
+  return dropdown;
+}
+
+/****
+ * build inbox list (unread to be implemented la'er)
+ * ** */
+Util.buildMessageList = async function (data){
+
+  // table lables
+  console.log("I'm getting here")
+  console.log(data)
+  let dataTable = '<thead>';
+  dataTable += '<tr><th>Received</th><th>Subject</th><th>From</th><th>Read</th></tr>'
+  dataTable += '</thead>';
+
+  // table body
+  dataTable += '<tbody>';
+
+  // iterate over all messages according to specific items(columns)
+  data.forEach((element) => {
+      dataTable += `<tr><td>${element.message_created}</td><td><a href=/message/messageBody/${element.message_id} title= highlight Test> ${element.message_subject}</a></td>`;
+      dataTable += `<td>${element.account_firstname + " " + element.account_lastname}</td><td>${element.message_read}</td></tr>`
+  })
+  dataTable += '</tbody>'
+
+  return dataTable
+}
 
 /* ****************************************
  * Middleware For Handling Errors

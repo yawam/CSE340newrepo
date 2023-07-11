@@ -1,0 +1,33 @@
+<% if (title) { %>
+    <h1 class="all-forms"><%= title %></h1>
+    <% } else { res.redirect("/") } %>
+    
+    <p><%- messages() %></p>
+
+    <div class="all-forms">
+        <p>From: <%- sender%> </p>
+        <p> <%- messageBody %> </p>
+        <p><%- message_id %></p>
+        <footer>Sent at: <%- timestamp  %></footer>
+    </div>
+
+    <div class="message-options">
+        <form action="" method="post">
+            <input type="submit" value="Reply">
+          </form>
+    
+        <form action="/message/read" method="post">
+            <input type="submit" value="Mark as Read">
+          </form>
+        
+        <form action="/message/archive" method="post">
+            <input type="submit" value="Archive Message">
+          </form>
+        
+        <form action="" method="post">
+            <input type="submit" value="Delete Message">
+          </form>
+    </div>
+
+
+    <a href="/message/">Return to Inbox</a>

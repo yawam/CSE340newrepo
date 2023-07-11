@@ -116,6 +116,8 @@ invCont.AddNewInventory = async function (req, res) {
       errors: null,
     });
   } else {
+
+    
     req.flash("notice", "Inventory Item has not been added");
     res.status(501).render("inventory/add-inventory", {
       title: "Add New Inventory Item",

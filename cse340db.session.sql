@@ -1,1 +1,1 @@
-SELECT * FROM public.inventory WHERE inv_id = 1
+ALTER TABLE message ADD PRIMARY KEY (message_id);
