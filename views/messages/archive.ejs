@@ -1,0 +1,12 @@
+<% if (title) { %>
+    <h1 class="all-forms"><%= title %></h1>
+ <% } else {
+    res.redirect("/")
+ } %>
+
+<p> <%- messages() %> </p>
+
+
+<table id="messageList"><%- messageList %></table>
+
+<a href="/message/">Return to Inbox</a>

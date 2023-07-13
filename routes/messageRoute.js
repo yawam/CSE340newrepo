@@ -40,6 +40,22 @@ router.get(
     utilities.handleErrors(messageController.buildMessageBodyView)
 )
 
+/****
+ * route to replyMessageview
+ * ***** */
+router.get(
+    "/reply/:message_id",
+    utilities.handleErrors(messageController.buildReplyMessageView)
+)
+
+/****
+ * route to process message reply
+ * **** */
+router.post(
+    "/replyMessage",
+    utilities.handleErrors(messageController.replyMessage)
+)
+
 /*****
  *route process marking as read
  * ****** */
@@ -54,6 +70,23 @@ router.post(
 router.post(
     "/archive",
     utilities.handleErrors(messageController.archiveMessage)
+)
+
+/*****
+ * route to build archive view
+ * **** */
+router.get(
+    "/archiveMessage",
+    utilities.handleErrors(messageController.buildArchiveView)
+
+)
+
+/****
+ * route to delete message
+ * ***** */
+router.post(
+    "/delete",
+    utilities.handleErrors(messageController.deleteMessage)
 )
 
 /*****

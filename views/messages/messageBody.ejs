@@ -7,25 +7,41 @@
     <div class="all-forms">
         <p>From: <%- sender%> </p>
         <p> <%- messageBody %> </p>
-        <p><%- message_id %></p>
+    
         <footer>Sent at: <%- timestamp  %></footer>
     </div>
 
     <div class="message-options">
-        <form action="" method="post">
+        <form action="/message/reply/<%- message_id %>" method="get">
             <input type="submit" value="Reply">
+            <input type="hidden" name="message_id"
+             <% if(message_id) { %>
+                value="<%= message_id %>"
+             <% } %> > 
           </form>
     
         <form action="/message/read" method="post">
             <input type="submit" value="Mark as Read">
+            <input type="hidden" name="message_id"
+             <% if(message_id) { %>
+                value="<%= message_id %>"
+             <% } %> > 
           </form>
         
         <form action="/message/archive" method="post">
             <input type="submit" value="Archive Message">
+            <input type="hidden" name="message_id"
+             <% if(message_id) { %>
+                value="<%= message_id %>"
+             <% } %> > 
           </form>
         
-        <form action="" method="post">
+        <form action="/message/delete" method="post">
             <input type="submit" value="Delete Message">
+            <input type="hidden" name="message_id"
+             <% if(message_id) { %>
+                value="<%= message_id %>"
+             <% } %> > 
           </form>
     </div>
 
