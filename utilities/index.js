@@ -10,8 +10,11 @@ require("dotenv").config();
  ************************** */
 Util.getNav = async function (req, res, next) {
   let data = await invModel.getClassifications();
-  let list = "<ul>";
+  let list = "<ul class='dropdown-nav'>";
   list += '<li><a href="/" title="Home page">Home</a></li>';
+  list += '<li class="dropdown">';
+  list += '<a href="#" title="Inventory">Inventory &#9662;</a>';
+  list += '<ul class="dropdown-content">';
   data.rows.forEach((row) => {
     list += "<li>";
     list +=
@@ -25,6 +28,8 @@ Util.getNav = async function (req, res, next) {
     list += "</li>";
   });
   list += "</ul>";
+  list += '</li>';
+  list += '</ul>';
   return list;
 };
 
@@ -152,7 +157,7 @@ Util.buildDropdown = async function (classification_id = null) {
  * **** */
 Util.buildAccountDropdown = async function (account_id = null){
   let data = await accModel.getAccounts();
-  let dropdown = "<select id='message_to' name='message_to' id='accountList' >";
+  let dropdown = "<select id='message_to' name='message_to' id='accountList' required >";
   dropdown += "<option value='' > -- Select --</option>";
   data.rows.forEach((row) => {
     dropdown += "<option value=" + row.account_id;

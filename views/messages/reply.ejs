@@ -7,14 +7,14 @@
     <form class="add-inventory-form all-forms message-inbox" action="/message/replyMessage" method="post">
       <h2>Send New Message</h2>
       <label for="message_from">Reply To: </label>
-      <input type="text" id="message_from" name="message_from" readonly value="<%- sender %>"><br />
+      <input type="text" id="message_from" name="message_from" readonly required value="<%- sender %>"><br />
 
     
       <label for="message_subject">Subject: </label>
-      <input type="text" name="message_subject" id="message_subject" value="RE:<%- subject %>" /><br />
+      <input type="text" name="message_subject" id="message_subject" required value="RE:<%- subject %>" /><br />
     
       <label for="message_body">Body: </label>
-      <textarea name="message_body" id="message_body" cols="35" rows="10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;///////////PreviousMessage//////////&nbsp;&nbsp;<%- messageBody %></textarea
+      <textarea name="message_body" id="message_body" required cols="35" rows="10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;///////////PreviousMessage//////////&nbsp;&nbsp;<%- messageBody %></textarea
       ><br />
     
       <input type="submit" value="Reply Message" />

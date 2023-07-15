@@ -2,6 +2,7 @@ const express = require("express");
 const router = new express.Router();
 const messageController = require("../Controllers/messageController");
 const utilities = require("../utilities/");
+const messValidate = require("../utilities/message-validation")
 // message validation
 // const regValidate = require("../utilities/account-validation");
 
@@ -29,6 +30,8 @@ module.exports = router
  * **** */
 router.post(
     "/send",
+    messValidate.messageBoxRules(),
+    messValidate.checkMessageData,
     utilities.handleErrors(messageController.sendMessage)
 )
 

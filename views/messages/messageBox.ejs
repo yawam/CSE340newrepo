@@ -9,10 +9,10 @@
   <label for="message_to">To:<%- dropdown %> </label><br />
 
   <label for="message_subject">Subject: </label>
-  <input type="text" name="message_subject" id="message_subject" /><br />
+  <input type="text" name="message_subject" id="message_subject" required /><br />
 
   <label for="message_body">Body: </label>
-  <textarea name="message_body" id="message_body" cols="30" rows="10"></textarea
+  <textarea name="message_body" id="message_body" cols="30" rows="10" required></textarea
   ><br />
 
   <input type="submit" value="Send Message" />
@@ -24,3 +24,5 @@
 
     <% } %>>
 </form>
+
+<a href="/message/">Return to Inbox</a>

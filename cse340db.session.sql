@@ -1,1 +1,1 @@
-ALTER TABLE message ADD PRIMARY KEY (message_id);
+DELETE FROM message WHERE message_id = '5';
